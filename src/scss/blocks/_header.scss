@@ -1,0 +1,9 @@
+@use '../base/mixins' as *;
+
+.header {
+  display: flex;
+
+  @include mobile {
+    flex-direction: column;
+  }
+}

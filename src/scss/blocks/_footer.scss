@@ -1,0 +1,17 @@
+@use '../base/mixins' as *;
+@use '../base/variables' as *;
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 16px 0px;
+  background-color: $main-color;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  @include mobile {
+    flex-direction: column;
+  }
+}

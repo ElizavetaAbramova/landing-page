@@ -1,0 +1,71 @@
+@use '../base/mixins' as *;
+@use '../base/variables' as *;
+
+.hero {
+  background-image: url('/public/images/hero-banner-image.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  width: 100%;
+  min-height: 500px;
+
+  display: flex;
+  align-items: center;
+
+  &__container {
+    max-width: $container-width;
+    width: 60%;
+    // padding: 40px 16px;
+
+    color: $banner-font-color;
+    font-family: $font-family-primary;
+    text-transform: uppercase;
+    letter-spacing: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  &__title {
+    font-size: 48px;
+    font-weight: 700;
+
+    @include mobile {
+      font-size: 24px;
+    }
+  }
+
+  &__text--accent {
+    color: $accent-color;
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__lead {
+    font-size: 16px;
+  }
+
+  &__list {
+    padding-left: 20px;
+  }
+
+  &__item {
+    margin-bottom: 6px;
+  }
+
+  &__actions {
+    display: flex;
+    gap: 16px;
+
+    @include mobile {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+}

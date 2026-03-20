@@ -1,9 +1,70 @@
 @use '../base/mixins' as *;
+@use '../base/variables' as *;
 
 .header {
-  display: flex;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: $main-color;
+  opacity: 0.9;
+  padding: 30px 0;
+  width: 100%;
 
-  @include mobile {
-    flex-direction: column;
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: $container-width;
+    margin: 0 auto;
+    color: $font-color;
+    font-family: $font-family-primary;
+    text-transform: uppercase;
+    letter-spacing: 0;
+
+    @include mobile {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__logo {
+    font-size: 28px;
+    font-weight: 800;
+
+    &--highlight {
+      color: $accent-color;
+    }
+
+    @include mobile {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    gap: 24px;
+
+    @include mobile {
+      flex-direction: column;
+      width: 100%;
+      gap: 8px;
+    }
+
+    & .header__link {
+      text-decoration: none;
+      font-family: $font-family-secondary;
+      font-size: 13px;
+      font-weight: 600;
+      color: $font-color;
+      transition: color 0.3s, border-bottom 0.3s;
+
+      &:hover {
+        color: $accent-color;
+      }
+
+      &--active {
+        color: $accent-color;
+      }
+    }
   }
 }

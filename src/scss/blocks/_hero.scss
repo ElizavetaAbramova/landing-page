@@ -5,32 +5,33 @@
   background-image: url('/public/images/hero-banner-image.png');
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: top;
 
   width: 100%;
-  min-height: 500px;
+  min-height: 850px;
 
   display: flex;
   align-items: center;
 
   &__container {
     max-width: $container-width;
-    width: 60%;
-    // padding: 40px 16px;
+    margin: 0 auto;
 
     color: $banner-font-color;
-    font-family: $font-family-primary;
-    text-transform: uppercase;
+    font-family: $font-family-secondary;
+
     letter-spacing: 0;
 
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 80px;
   }
 
   &__title {
     font-size: 48px;
     font-weight: 700;
+    width: 70%;
+    text-transform: uppercase;
 
     @include mobile {
       font-size: 24px;
@@ -48,20 +49,29 @@
   }
 
   &__lead {
-    font-size: 16px;
+    font-size: 20px;
+    font-weight: 700;
   }
 
   &__list {
     padding-left: 20px;
+    list-style-type: none;
   }
 
   &__item {
     margin-bottom: 6px;
+    font-size: 20px;
+    font-weight: 400;
+
+    &::marker {
+      content: "- ";
+    }
   }
 
   &__actions {
     display: flex;
-    gap: 16px;
+    gap: 32px;
+    width: 34%;
 
     @include mobile {
       flex-direction: column;

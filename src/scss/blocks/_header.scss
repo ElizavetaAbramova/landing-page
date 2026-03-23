@@ -5,7 +5,7 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  background-color: $main-color;
+  background-color: $header-background-color;
   opacity: 0.9;
   padding: 30px 0;
   width: 100%;
@@ -17,7 +17,6 @@
     max-width: $container-width;
     margin: 0 auto;
     color: $font-color;
-    font-family: $font-family-primary;
     text-transform: uppercase;
     letter-spacing: 0;
 
@@ -30,6 +29,7 @@
   &__logo {
     font-size: 28px;
     font-weight: 800;
+    font-family: $font-family-primary;
 
     &--highlight {
       color: $accent-color;
@@ -42,7 +42,7 @@
 
   &__nav {
     display: flex;
-    gap: 24px;
+    gap: 56px;
 
     @include mobile {
       flex-direction: column;

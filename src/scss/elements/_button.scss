@@ -7,8 +7,9 @@
   font-size: 13px;
   font-weight: 400;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
   text-transform: uppercase;
+  flex: 1;
 
   &--primary {
     background-color: $accent-color;
@@ -16,7 +17,8 @@
     border: 1px solid $font-color;
 
     &:hover {
-      // background-color: darken($accent-color, 10%);
+      background-color: $font-color;
+      color: $accent-color;
     }
   }
 
@@ -26,8 +28,8 @@
     border: 1px solid #6F6D7B;
 
     &:hover {
-      background-color: $font-color;
-      color: $main-color;
+      background-color: $font-color-secondary;
+      color: $font-color;
     }
   }
 }

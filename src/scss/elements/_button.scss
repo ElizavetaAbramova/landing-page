@@ -1,0 +1,33 @@
+@use '../base/variables' as *;
+
+.button {
+  padding: 15px 10px;
+  border-radius: 4px;
+  border: none;
+  font-size: 13px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+
+  &--primary {
+    background-color: $accent-color;
+    color: $font-color;
+    border: 1px solid $font-color;
+
+    &:hover {
+      // background-color: darken($accent-color, 10%);
+    }
+  }
+
+  &--secondary {
+    background-color: $font-color;
+    color: $font-color-secondary;
+    border: 1px solid #6F6D7B;
+
+    &:hover {
+      background-color: $font-color;
+      color: $main-color;
+    }
+  }
+}

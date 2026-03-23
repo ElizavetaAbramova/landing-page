@@ -2,13 +2,70 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/public/favicon.png" />
     <link rel="stylesheet" href="./css/style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>landing-page</title>
   </head>
-  <body>
-    <div id="app"></div>
+  <body class="body">
+    <header class="header">
+      <div class="header__container">
+        <div class="header__logo">
+          LoremIpsum<span class="header__logo--highlight">.Net</span>
+        </div>
+        <nav class="header__nav">
+          <a href="#" class="header__link header__link--active">Бизнес</a>
+          <a href="#" class="header__link">О нас</a>
+          <a href="#" class="header__link">Цены</a>
+          <a href="#" class="header__link">Оформить заказ</a>
+        </nav>
+      </div>
+    </header>
+    <main class="main">
+      <section class="hero">
+        <div class="hero__container">
+          <h1 class="hero__title">
+            <span class="hero__text--accent">Lorem ipsum</span>
+            dolor sit amet consectetur
+            <span class="hero__text--accent">adipiscing</span>
+          </h1>
+
+          <div class="hero__description">
+            <p class="hero__lead">
+              At vero eos et accusamus et iusto odio dignissimos ducimus!
+            </p>
+
+            <ul class="hero__list">
+              <li class="hero__item">Totam rem aperiam eaque ipsa</li>
+              <li class="hero__item">
+                Sit voluptatem accusantium doloremque laudantium
+              </li>
+              <li class="hero__item">
+                Sed ut perspiciatis, unde omnis iste natus error
+              </li>
+            </ul>
+          </div>
+
+          <div class="hero__actions">
+            <button class="button button--primary">Заказать</button>
+            <button class="button button--secondary">Подробнее</button>
+          </div>
+        </div>
+      </section>
+      <div class="order-form">
+        <form class="order-form__form">
+          <div class="order-form__field">
+            <label for="name">Имя</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="order-form__field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+        </form>
+      </div>
+    </main>
+    <footer class="footer"></footer>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

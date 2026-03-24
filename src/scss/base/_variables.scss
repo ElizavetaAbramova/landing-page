@@ -1,17 +1,31 @@
-$main-color: #10101d;
-$header-background-color: #10101d;
-$order-background-color: #272733;
-$accent-color: #3e9cdc;
-$background-color: #3d4050;
-$font-color: #ffffff;
-$banner-font-color: #000000;
-$font-color-secondary: #2a2b30;
-$container-width: 1200px;
+// COLORS
+$color-bg-main: #10101d;
+$color-bg-section: #272733;
+$color-bg-footer: #3d4050;
+
+$color-accent: #3e9cdc;
+
+$color-text-primary: #ffffff;
+$color-text-secondary: #c3c3c3;
+$color-text-muted: #bbbbbb;
+$color-text-dark: #2a2b30;
+$color-text-black: #000000;
+
+// BORDERS
+$color-border-primary: #286690;
+$color-border-secondary: #6f6d7b;
+
+// INPUT
+$color-input-bg: rgba(255, 255, 255, 0.85);
+
+// RANGE
+$color-range-track: rgba(255, 255, 255, 0.7);
+$color-range-thumb: #42a9ed;
+
+//TYPOGRAPHY
 $font-family-primary: "Raleway", sans-serif;
 $font-family-secondary: "Lato", sans-serif;
-$font-color-light: #bbbbbb;
-$border-color: #286690;
-$input-background-color: #ffffffd9;
-$footer-text-color-secondary: #c3c3c3;
-$range-track-color: #ffffffb2;
-$range-thumb-color: #42a9ed;
+
+//LAYOUT
+$container-width: 1200px;
+$container-padding: 20px;

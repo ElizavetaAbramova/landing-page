@@ -1,14 +1,18 @@
-@use '../base/mixins' as *;
-@use '../base/variables' as *;
+@use "../base/mixins" as *;
+@use "../base/variables" as *;
 
 .header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background-color: $header-background-color;
+  background-color: $color-bg-main;
   opacity: 0.9;
   padding: 30px 0;
   width: 100%;
+
+  @include mobile {
+    padding: 15px 0;
+  }
 
   &__container {
     display: flex;
@@ -16,13 +20,14 @@
     align-items: center;
     max-width: $container-width;
     margin: 0 auto;
-    color: $font-color;
+    color: $color-text-primary;
     text-transform: uppercase;
     letter-spacing: 0;
+    padding: 0 $container-padding;
 
     @include mobile {
       flex-direction: column;
-      align-items: flex-start;
+      gap: 20px;
     }
   }
 
@@ -32,11 +37,11 @@
     font-family: $font-family-primary;
 
     &--highlight {
-      color: $accent-color;
+      color: $color-accent;
     }
 
-    @include mobile {
-      margin-bottom: 12px;
+    @include tablet {
+      font-size: 20px;
     }
   }
 
@@ -44,10 +49,13 @@
     display: flex;
     gap: 56px;
 
+    @include tablet {
+      gap: 20px;
+    }
+
     @include mobile {
-      flex-direction: column;
-      width: 100%;
-      gap: 8px;
+      gap: 10px;
+      flex-wrap: wrap;
     }
 
     & .header__link {
@@ -55,15 +63,19 @@
       font-family: $font-family-secondary;
       font-size: 13px;
       font-weight: 600;
-      color: $font-color;
-      transition: color 0.3s, border-bottom 0.3s;
+      color: $color-text-primary;
+      transition:
+        color 0.3s,
+        border-bottom 0.3s;
 
-      &:hover {
-        color: $accent-color;
+      @media (hover: hover) and (pointer: fine) {
+        &:hover {
+          color: $color-accent;
+        }
       }
 
       &--active {
-        color: $accent-color;
+        color: $color-accent;
       }
     }
   }

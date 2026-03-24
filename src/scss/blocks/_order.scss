@@ -1,24 +1,22 @@
 @use "../base/variables" as *;
+@use "../base/mixins" as *;
 
 .order {
-  padding: 130px 20px;
-  color: $font-color;
+  padding: 130px $container-padding;
+  color: $color-text-primary;
   display: flex;
   justify-content: center;
   align-items: center;
-
   position: relative;
-  background: $order-background-color;
+  background: $color-bg-section;
   overflow: hidden;
 
   &::before {
     content: "";
     position: absolute;
     inset: 0;
-
     background: url("/public/images/main-background.png") no-repeat top / cover;
     opacity: 0.1;
-
     z-index: 0;
   }
 
@@ -30,6 +28,7 @@
   &__container {
     max-width: $container-width;
     margin: 0 auto;
+    padding: 0 $container-padding;
     flex: 1;
     height: 100%;
     font-family: $font-family-secondary;
@@ -44,13 +43,13 @@
   }
 
   &__accent {
-    color: $accent-color;
+    color: $color-accent;
   }
 
   &__description {
     text-align: center;
     margin-bottom: 60px;
-    color: $font-color-light;
+    color: $color-text-muted;
   }
 
   &__grid {
@@ -58,8 +57,9 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 36px;
 
-    @media (max-width: 768px) {
+    @include tablet {
       grid-template-columns: 1fr;
+      gap: 30px 15px;
     }
   }
 
@@ -68,9 +68,9 @@
     select {
       width: 100%;
       padding: 12px;
-      border: 1px solid $font-color;
+      border: 1px solid $color-text-primary;
       border-radius: 4px;
-      background-color: $input-background-color;
+      background-color: $color-input-bg;
     }
   }
 
@@ -78,22 +78,22 @@
     grid-column: span 2;
 
     input {
-      -webkit-appearance: none;
+      appearance: none;
       width: 100%;
       background: transparent;
 
       &::-webkit-slider-runnable-track {
         height: 6px;
-        background: $range-track-color;
+        background: $color-range-track;
         border-radius: 2px;
-        border: 1px solid $font-color;
+        border: 1px solid $color-text-primary;
       }
 
       &::-moz-range-track {
         height: 6px;
-        background: $range-track-color;
+        background: $color-range-track;
         border-radius: 2px;
-        border: 1px solid $font-color;
+        border: 1px solid $color-text-primary;
       }
 
       &::-webkit-slider-thumb {
@@ -101,8 +101,8 @@
         width: 20px;
         height: 20px;
         border-radius: 50%;
-        background: $range-thumb-color;
-        border: 3px solid $border-color;
+        background: $color-range-thumb;
+        border: 3px solid $color-border-primary;
         margin-top: -7px;
         cursor: pointer;
       }
@@ -111,8 +111,8 @@
         width: 20px;
         height: 20px;
         border-radius: 50%;
-        background: $range-thumb-color;
-        border: 3px solid $border-color;
+        background: $color-range-thumb;
+        border: 3px solid $color-border-primary;
         margin-top: -7px;
         cursor: pointer;
       }
@@ -139,6 +139,11 @@
     display: flex;
     align-items: center;
     padding: 0 !important;
+    text-align: center;
+
+    @include mobile {
+      padding: 0 10px !important;
+    }
   }
 
   &__submit {

@@ -1,4 +1,5 @@
 @use "../base/variables" as *;
+@use "../base/mixins" as *;
 
 .order-steps {
   margin-bottom: 60px;
@@ -10,6 +11,16 @@
     list-style: none;
     padding: 0;
     margin: 0;
+
+    @include tablet {
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    @include mobile {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__item {
@@ -25,11 +36,28 @@
       width: 50%;
       height: 7px;
 
-      background: radial-gradient(circle, $font-color 3px, transparent 3px);
+      background: radial-gradient(
+        circle,
+        $color-text-primary 3px,
+        transparent 3px
+      );
       background-size: 25px 7px;
 
       opacity: 0.7;
       z-index: 0;
+    }
+
+    @include tablet {
+      &::after {
+        display: none;
+      }
+    }
+
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
     }
   }
 
@@ -37,8 +65,8 @@
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    border: 5px solid $border-color;
-    background: $accent-color;
+    border: 5px solid $color-border-primary;
+    background: $color-accent;
 
     margin: 0 auto 20px;
     position: relative;
@@ -47,11 +75,21 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @include mobile {
+      margin: 0;
+    }
   }
 
   &__text {
     font-size: 14px;
     font-weight: 400;
-    color: $font-color;
+    color: $color-text-primary;
+    word-wrap: break-word;
+    white-space: normal;
+
+    @include mobile {
+      width: 95%;
+    }
   }
 }

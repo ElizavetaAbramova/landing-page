@@ -3,7 +3,15 @@
 
 .footer {
   padding: 16px 0px;
-  background-color: $background-color;
+  background-color: $color-bg-footer;
+
+  @include tablet {
+    padding: 20px 50px;
+  }
+
+  @include mobile {
+    padding: 20px;
+  }
 
   &__container {
     display: flex;
@@ -11,15 +19,18 @@
     align-items: center;
     max-width: $container-width;
     margin: 0 auto;
-    color: $font-color;
+    padding: 0 $container-padding;
+    color: $color-text-primary;
     letter-spacing: 0;
     font-family: $font-family-secondary;
     font-size: 13px;
     font-weight: 400;
 
-    @include mobile {
+    @include tablet {
       flex-direction: column;
       align-items: flex-start;
+      gap: 25px;
+      padding: 0;
     }
   }
 
@@ -36,13 +47,18 @@
       content: "";
       width: 1px;
       height: 18px;
-      background: $font-color;
+      background: $color-text-primary;
     }
 
-    @include mobile {
+    @include desktop {
       &::after {
         display: none;
       }
+    }
+
+    @include mobile {
+      gap: 20px;
+      flex-direction: column;
     }
   }
 
@@ -50,12 +66,16 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    color: $footer-text-color-secondary;
+    color: $color-text-secondary;
+
+    @include tablet {
+      gap: 5px;
+    }
   }
 
   &__contact {
     text-decoration: none;
-    color: $font-color;
+    color: $color-text-primary;
     display: flex;
     align-items: center;
     gap: 10px;

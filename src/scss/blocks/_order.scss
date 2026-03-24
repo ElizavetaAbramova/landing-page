@@ -15,7 +15,8 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: url("public/images/main-background.png") no-repeat top / cover;
+    background: url("../public/images/main-background.png") no-repeat top /
+      cover;
     opacity: 0.1;
     z-index: 0;
   }

@@ -1,0 +1,95 @@
+@use "../base/variables" as *;
+@use "../base/mixins" as *;
+
+.order-steps {
+  margin-bottom: 60px;
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    @include tablet {
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    @include mobile {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__item {
+    position: relative;
+    flex: 1;
+    text-align: center;
+
+    &:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      top: 50px;
+      left: 74%;
+      width: 50%;
+      height: 7px;
+
+      background: radial-gradient(
+        circle,
+        $color-text-primary 3px,
+        transparent 3px
+      );
+      background-size: 25px 7px;
+
+      opacity: 0.7;
+      z-index: 0;
+    }
+
+    @include tablet {
+      &::after {
+        display: none;
+      }
+    }
+
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+
+  &__icon {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 5px solid $color-border-primary;
+    background: $color-accent;
+
+    margin: 0 auto 20px;
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include mobile {
+      margin: 0;
+    }
+  }
+
+  &__text {
+    font-size: 14px;
+    font-weight: 400;
+    color: $color-text-primary;
+    word-wrap: break-word;
+    white-space: normal;
+
+    @include mobile {
+      width: 95%;
+    }
+  }
+}

@@ -4,7 +4,8 @@
 
 @use 'blocks/header';
 @use 'blocks/footer';
-@use 'blocks/order-form';
+@use 'blocks/order';
 @use 'blocks/hero';
 
 @use 'elements/button';
+@use 'elements/order-steps';

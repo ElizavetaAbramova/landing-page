@@ -1,4 +1,4 @@
-@use '../base/variables' as *;
+@use "../base/variables" as *;
 
 .order {
   padding: 130px 20px;
@@ -16,7 +16,7 @@
     position: absolute;
     inset: 0;
 
-    background: url('/public/images/main-background.png') no-repeat top / cover;
+    background: url("/public/images/main-background.png") no-repeat top / cover;
     opacity: 0.1;
 
     z-index: 0;
@@ -75,43 +75,73 @@
   }
 
   &__range {
-    // margin: 30px 0;
     grid-column: span 2;
 
     input {
+      -webkit-appearance: none;
       width: 100%;
+      background: transparent;
+
+      &::-webkit-slider-runnable-track {
+        height: 6px;
+        background: $range-track-color;
+        border-radius: 2px;
+        border: 1px solid $font-color;
+      }
+
+      &::-moz-range-track {
+        height: 6px;
+        background: $range-track-color;
+        border-radius: 2px;
+        border: 1px solid $font-color;
+      }
+
+      &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: $range-thumb-color;
+        border: 3px solid $border-color;
+        margin-top: -7px;
+        cursor: pointer;
+      }
+
+      &::-moz-range-thumb {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: $range-thumb-color;
+        border: 3px solid $border-color;
+        margin-top: -7px;
+        cursor: pointer;
+      }
     }
   }
 
   &__range-label {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 24px;
+    margin-bottom: 8px;
   }
 
   &__file-btn {
-    display: block;
-    // padding: 10px 15px;
-    // background: #fff;
-    // color: #000;
+    display: flex;
     cursor: pointer;
     margin: 0 auto;
-    // text-align: center;
-    // flex: 1;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  &__file {
+    display: flex;
+    align-items: center;
+    padding: 0 !important;
   }
 
   &__submit {
     grid-column: span 1/3;
-    // display: block;
-    // margin: 0 auto;
-    // padding: 12px 30px;
-    // background: #3ba6ff;
-    // border: none;
-    // color: #fff;
-    // cursor: pointer;
-
-    // &:hover {
-    //   background: #2b8de0;
-    // }
   }
 }
